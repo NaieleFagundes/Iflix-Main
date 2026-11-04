@@ -1,0 +1,33 @@
+<h1>Usuário</h1>
+@if(msg()){
+<h2>{{msg()}}</h2>
+}
+<form [formGroup]="form">
+  <div>
+    <label>Nome:</label>
+    <input type="text" formControlName="nome" />
+  </div>
+
+  <div>
+    <label>Email:</label>
+    <input type="email" formControlName="email" />
+  </div>
+
+  <div>
+    <label>Senha:</label>
+    <input type="password" formControlName="senha" />
+  </div>
+
+  <div>
+    <label>Tipo:</label>
+    <select formControlName="tipo">
+      <option value="COMUM">Comum</option>
+      <option value="ADMIN">Administrador</option>
+    </select>
+  </div>
+
+  <div>
+    <button>Cancelar</button>
+    <button (click)="salvar()">Salvar</button>
+  </div>
+</form>

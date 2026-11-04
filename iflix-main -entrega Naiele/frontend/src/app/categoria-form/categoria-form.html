@@ -1,0 +1,16 @@
+<h1> Categoria </h1>
+@if(msg()){
+    <h2>
+        {{msg()}}
+    </h2>
+}
+<form [formGroup]="form" > 
+    <div>
+        <label>Nome:</label>
+        <input type="text" formControlName="nome" >
+    </div>
+    <div>
+        <button  >Cancelar</button>
+        <button (click)="salvar()" >Salvar</button>
+    </div>
+</form>

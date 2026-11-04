@@ -1,0 +1,24 @@
+<h1>Lista de Usuários</h1>
+<a href="/usuario"> Novo Usuário </a>
+
+@if( usuarios().length > 0 ){
+
+<ul>
+  @for( usuario of usuarios();track usuario.idUsuario ){
+  <li>{{usuario.nome}}</li>
+  <li>{{usuario.email}}</li>
+  <li>{{usuario.tipo}}</li>
+  <li>
+    <a href="/usuario/{{usuario.idUsuario}}"> Editar </a>
+  </li>
+  <button type="button" (click)="excluir(usuario.idUsuario)">
+    Excluir Usuário
+  </button>
+  }
+</ul>
+
+} @else{
+<h3>Nenhum usuário encontrado!</h3>
+<p>cadastre um clicando no link acima!</p>
+
+}
